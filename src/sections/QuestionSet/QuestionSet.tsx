@@ -47,6 +47,7 @@ export default class QuestionSet extends React.Component {
           placeholder={question.placeholder}
           onChange={this.updateAnswer}
           data-ques={index}
+          valid={question.answer !== ""}
         />
       );
     } else if (question.type === "select") {
@@ -56,6 +57,7 @@ export default class QuestionSet extends React.Component {
           onChange={this.updateAnswer}
           data-ques={index}
           id={question.id}
+          valid={question.answer !== ""}
         >
           {question.options.map(opt => {
             return (
@@ -75,6 +77,7 @@ export default class QuestionSet extends React.Component {
           defaultValue={question.answer}
           onChange={this.updateAnswer}
           data-ques={index}
+          valid={question.answer !== ""}
         />
       );
     }
